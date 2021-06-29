@@ -23,7 +23,7 @@ public class AnnouncementController {
     }
 
     @PostMapping
-    public Announcement addAnnouncement(Announcement announcement){
+    public Announcement addAnnouncement(@RequestBody Announcement announcement){
         return service.addAnnouncement(announcement);
     }
 
