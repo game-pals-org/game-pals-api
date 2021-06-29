@@ -1,6 +1,7 @@
 package org.gamepals.gamepalsapi.announcement;
 
 public class Announcement {
+
     long id;
     String nick;
     String gameName;
