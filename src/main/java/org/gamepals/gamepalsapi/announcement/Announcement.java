@@ -1,19 +1,23 @@
-package org.gamepals.gamepalsapi.annoucment;
+package org.gamepals.gamepalsapi.announcement;
 
-public class Annoucment {
+public class Announcement {
+    long id;
     String nick;
     String gameName;
     String discordName;
     String additionalInfo;
 
-    public Annoucment(String nick, String gameName, String discordName, String additionalInfo) {
+    public Announcement( Long id, String nick, String gameName, String discordName, String additionalInfo) {
+        this.id = id;
         this.nick = nick;
         this.gameName = gameName;
         this.discordName = discordName;
         this.additionalInfo = additionalInfo;
     }
 
-    public Annoucment() {
+
+
+    public Announcement() {
     }
 
     public String getNick() {
