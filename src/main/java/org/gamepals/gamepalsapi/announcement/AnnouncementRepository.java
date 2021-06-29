@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AnnouncementRepository {
+
+    Long index = 6L;
+
+
     List<Announcement> allAnnouncement = new ArrayList<>(
             Arrays.asList(new Announcement(1L,"nick1","LOL","discord1","..."),
                     new Announcement(2L,"nick2","WOT","discord2","info"),
