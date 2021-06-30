@@ -6,5 +6,11 @@ public interface AnnouncementService {
 
     List<Announcement> getAnnouncements();
     Announcement addAnnouncement(Announcement announcement);
-
+    List<Announcement> getAnnouncementsByGameNameAsc();
+    List<Announcement> getAnnouncementsByGameNameDesc();
+    List<Announcement> getAnnouncementsByDateAsc();
+    List<Announcement> getAnnouncementsBtDateDesc();
+    List<Announcement> getAnnouncementsForRanked();
+    List<Announcement> getAnnouncementsForCasual();
+    List<Announcement> getAnnouncementsBySearchedGame(String name);
 }

@@ -28,5 +28,35 @@ public class AnnouncementController {
         return announcementService.addAnnouncement(announcement);
     }
 
+    @GetMapping("/gamenameasc")
+    public List<Announcement> getAnnouncementsByGameNameAsc(){
+        return announcementService.getAnnouncementsByGameNameAsc();
+    }
+    @GetMapping("/gamenamedesc")
+    public List<Announcement> getAnnouncementsByGameNameDesc(){
+        return announcementService.getAnnouncementsByGameNameDesc();
+    }
+    @GetMapping("/dateasc")
+    public List<Announcement> getAnnouncementsByDateAsc(){
+        return announcementService.getAnnouncementsByDateAsc();
+    }
+    @GetMapping("/datedesc")
+    public List<Announcement> getAnnouncementsBtDateDesc(){
+        return announcementService.getAnnouncementsBtDateDesc();
+    }
+    @GetMapping("/ranked")
+    public List<Announcement> getAnnouncementsForRanked(){
+        return announcementService.getAnnouncementsForRanked();
+    }
+    @GetMapping("/casual")
+    public List<Announcement> getAnnouncementsForCasual(){
+        return announcementService.getAnnouncementsForCasual();
+    }
+    @GetMapping("/{name}")
+    public List<Announcement> getAnnouncementsBySearchedGame(@PathVariable String name){
+        return announcementService.getAnnouncementsBySearchedGame(name);
+    }
+
+
 
 }
