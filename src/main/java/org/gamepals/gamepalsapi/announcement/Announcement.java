@@ -16,48 +16,9 @@ public class Announcement {
         this.additionalInfo = additionalInfo;
     }
 
-
-
-    public Announcement() {
-    }
-
-    public String getNick() {
-        return nick;
-    }
-
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-
-    public String getGameName() {
-        return gameName;
-    }
-
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
-    }
-
-    public String getDiscordName() {
-        return discordName;
-    }
-
-    public void setDiscordName(String discordName) {
-        this.discordName = discordName;
-    }
-
-    public String getAdditionalInfo() {
-        return additionalInfo;
-    }
-
-    public void setAdditionalInfo(String additionalInfo) {
-        this.additionalInfo = additionalInfo;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
+    public Announcement setId(long id) {
         this.id = id;
+        return this;
     }
+
 }
