@@ -1,5 +1,7 @@
 package org.gamepals.gamepalsapi.announcement;
 
+import java.time.LocalDateTime;
+
 public class Announcement {
 
     long id;
@@ -7,16 +9,20 @@ public class Announcement {
     String gameName;
     String discordName;
     String additionalInfo;
+    boolean isRanked;
+    LocalDateTime date;
 
     public Announcement() {
     }
 
-    public Announcement(Long id, String nick, String gameName, String discordName, String additionalInfo) {
+    public Announcement(Long id, String nick, String gameName, String discordName, String additionalInfo, boolean isRanked, LocalDateTime date) {
         this.id = id;
         this.nick = nick;
         this.gameName = gameName;
         this.discordName = discordName;
         this.additionalInfo = additionalInfo;
+        this.isRanked = isRanked;
+        this.date = date;
     }
 
     public long getId() {
@@ -60,4 +66,19 @@ public class Announcement {
         return this;
     }
 
+    public boolean isRanked() {
+        return isRanked;
+    }
+
+    public void setRanked(boolean ranked) {
+        isRanked = ranked;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 }
