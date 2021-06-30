@@ -11,21 +11,21 @@ import java.util.List;
 @RequestMapping("/announcement")
 @CrossOrigin
 public class AnnouncementController {
-    public AnnouncementController(AnnouncementService service) {
-        this.service = service;
-    }
-    @Autowired
-    private final AnnouncementService service;
 
+    private final AnnouncementService announcementService;
+
+    private AnnouncementController() {
+        this.announcementService = new AnnouncementInMemoryService();
+    }
 
     @GetMapping
     public List<Announcement> getAllAnnouncements(){
-        return service.getAllAnnouncements();
+        return announcementService.getAnnouncements();
     }
 
     @PostMapping
     public Announcement addAnnouncement(@RequestBody Announcement announcement){
-        return service.addAnnouncement(announcement);
+        return announcementService.addAnnouncement(announcement);
     }
 
 
