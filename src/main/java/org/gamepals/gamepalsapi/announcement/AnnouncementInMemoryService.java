@@ -2,10 +2,7 @@ package org.gamepals.gamepalsapi.announcement;
 
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class AnnouncementInMemoryService implements AnnouncementService{
@@ -78,7 +75,7 @@ public class AnnouncementInMemoryService implements AnnouncementService{
     @Override
     public List<Announcement> getAnnouncementsBySearchedGame(String name) {
         return allAnnouncement.stream()
-                .filter(announcement -> announcement.getGameName().equals(name))
+                .filter(announcement -> announcement.getGameName().equalsIgnoreCase(name))
                 .collect(Collectors.toList());
     }
 }
