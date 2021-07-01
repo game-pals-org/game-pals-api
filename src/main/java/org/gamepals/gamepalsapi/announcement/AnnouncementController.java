@@ -14,8 +14,9 @@ public class AnnouncementController {
 
     private final AnnouncementService announcementService;
 
-    private AnnouncementController() {
-        this.announcementService = new AnnouncementInMemoryService();
+    @Autowired
+    private AnnouncementController(AnnouncementService announcementService) {
+        this.announcementService = announcementService;
     }
 
     @GetMapping
