@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 public class Announcement {
 
     long id;
+    String user;
     String nick;
     String gameName;
     String discordName;
@@ -15,8 +16,9 @@ public class Announcement {
     public Announcement() {
     }
 
-    public Announcement(Long id, String nick, String gameName, String discordName, String additionalInfo, boolean isRanked, LocalDateTime date) {
+    public Announcement(Long id, String user, String nick, String gameName, String discordName, String additionalInfo, boolean isRanked, LocalDateTime date) {
         this.id = id;
+        this.user = user;
         this.nick = nick;
         this.gameName = gameName;
         this.discordName = discordName;
@@ -31,6 +33,14 @@ public class Announcement {
 
     public String getNick() {
         return nick;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public void setNick(String nick) {

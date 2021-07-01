@@ -1,20 +1,23 @@
 package org.gamepals.gamepalsapi.announcement;
 
 
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Service
 public class AnnouncementInMemoryService implements AnnouncementService{
 
     private static Long index = 6L;
     
     private static List<Announcement> allAnnouncement = new ArrayList<>(
-            Arrays.asList(new Announcement(1L,"nick1","LOL","discord1","...", true, LocalDateTime.now()),
-                    new Announcement(2L,"nick2","WOT","discord2","info", false, LocalDateTime.now()),
-                    new Announcement(3L,"nick3","BFV","discord3","info", true, LocalDateTime.now()),
-                    new Announcement(4L,"nick4","CSGO","discord4","info", false, LocalDateTime.now()),
-                    new Announcement(5L,"nick5","DOTA","discord5","info", false, LocalDateTime.now()))
+            Arrays.asList(new Announcement(1L,"ShadowWarrior","nick1","LOL","discord1","...", true, LocalDateTime.now()),
+                    new Announcement(2L,"ShadowWarrior","nick2","WOT","discord2","info", false, LocalDateTime.now()),
+                    new Announcement(3L,"pawcio_x2010","nick3","BFV","discord3","info", true, LocalDateTime.now()),
+                    new Announcement(4L,"ShadowWarrior","nick4","CSGO","discord4","info", false, LocalDateTime.now()),
+                    new Announcement(5L,"pawcio_x2010","nick5","DOTA","discord5","info", false, LocalDateTime.now()))
     );
     
     @Override
@@ -27,6 +30,11 @@ public class AnnouncementInMemoryService implements AnnouncementService{
         allAnnouncement.add(announcement.setId(index));
         index++;
         return announcement;
+    }
+
+    @Override
+    public Announcement getAnnouncementById(Long id) {
+        return allAnnouncement.stream().filter(a -> a.getId() == id).findFirst().get();
     }
 
     @Override
