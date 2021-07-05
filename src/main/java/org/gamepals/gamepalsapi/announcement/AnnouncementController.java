@@ -14,15 +14,14 @@ import java.util.List;
 public class AnnouncementController {
 
     private final AnnouncementService service;
-    @Autowired
 
-    private AnnouncementController(@Qualifier("announcementInMemoryService")  AnnouncementService service) {
+    @Autowired
+    private AnnouncementController(@Qualifier("announcementInMemoryService")AnnouncementService service) {
         this.service = service;
     }
 
     @GetMapping
     public List<Announcement> getAllAnnouncements() {
-
         return service.getAnnouncements();
     }
 

@@ -1,6 +1,8 @@
 package org.gamepals.gamepalsapi.announcement;
 
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

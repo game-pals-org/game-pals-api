@@ -1,6 +1,7 @@
 package org.gamepals.gamepalsapi.announcement;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
@@ -22,7 +23,7 @@ public class AnnouncementDbService implements AnnouncementService{
         return repository.findAll();
     }
 
-    
+
 
     public Announcement addAnnouncement(Announcement announcement) {
         Optional<Announcement> maybeDuplicate = repository.findById(announcement.getId());
