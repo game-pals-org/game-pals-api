@@ -14,7 +14,7 @@ import java.util.List;
 public class AccountInMemoryService implements AccountService {
 
     private List<Account> users = new ArrayList<>(Arrays.asList(
-            new Account("ShadowWarrior", "", new ArrayList<>(Arrays.asList(1L, 2L, 4L))),
+            new Account("ShadowWarrior", "0EB0CB8F59E4EFFDEDAB83E44E320301C413A24573CB1606F83D8F2A1778E58B", new ArrayList<>(Arrays.asList(1L, 2L, 4L))),
             new Account("pawcio_x2010", "", new ArrayList<>(Arrays.asList(3L, 5L)))
     ));
 
