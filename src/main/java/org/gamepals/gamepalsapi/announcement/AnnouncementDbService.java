@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,17 +25,19 @@ public class AnnouncementDbService {
     ;
 
     public Announcement addAnnouncement(Announcement announcement) {
-        repository.findById(announcement.getId())
-                .ifPresent(() -> {
-                    throw new IllegalArgumentException("Announcement with this ID already exists");
-                });
-        repository.save(announcement);
+        Optional<Announcement> maybeDuplicate = repository.findById(announcement.getId());
+        if(maybeDuplicate.isPresent()){
+            throw new IllegalArgumentException("Annoucment already exists");
+        }else{
+            repository.save(announcement.setId(AnnouncementInMemoryService.getIndex()));
+            AnnouncementInMemoryService.setIndex(AnnouncementInMemoryService.getIndex() + 1 );
+        }
         return announcement;
     }
 
     public Announcement deleteAnnouncementById(Long id) {
         Announcement toDelete = repository.findById(id)
-                .orElse(() -> {
+                .orElseThrow(() -> {
                     throw new NoSuchElementException("No announcement with such ID found");
                 });
         repository.delete(toDelete);
@@ -86,7 +89,7 @@ public class AnnouncementDbService {
 
 
     public List<Announcement> getAnnouncementsFromUserWithUsername(String username) {
-        return repository.findByUsername(username);
+        return repository.findByUser(username);
     }
 
 

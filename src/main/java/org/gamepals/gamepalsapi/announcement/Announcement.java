@@ -1,5 +1,8 @@
 package org.gamepals.gamepalsapi.announcement;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.context.annotation.Primary;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
@@ -16,6 +19,7 @@ public class Announcement {
     String discordName;
     String additionalInfo;
     boolean isRanked;
+    @CreationTimestamp
     LocalDateTime date;
 
     public Announcement() {

@@ -11,7 +11,15 @@ import java.util.stream.Collectors;
 public class AnnouncementInMemoryService implements AnnouncementService{
 
     private static Long index = 6L;
-    
+
+    public static Long getIndex() {
+        return index;
+    }
+
+    public static void setIndex(Long index) {
+        AnnouncementInMemoryService.index = index;
+    }
+
     private static List<Announcement> allAnnouncement = new ArrayList<>(
             Arrays.asList(new Announcement(1L,"ShadowWarrior","nick1","LOL","discord1","...", true, LocalDateTime.now()),
                     new Announcement(2L,"ShadowWarrior","nick2","WOT","discord2","info", false, LocalDateTime.now()),

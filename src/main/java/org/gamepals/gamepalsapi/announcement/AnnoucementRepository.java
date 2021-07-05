@@ -7,7 +7,7 @@ import java.util.List;
 public interface AnnoucementRepository extends JpaRepository<Announcement,Long> {
 List<Announcement> findByisRanked(boolean isRanked);
 List<Announcement> findByGameNameStartingWith(String name);
-List<Announcement> findByUsername(String username);
+List<Announcement> findByUser(String user);
 
 
 
