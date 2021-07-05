@@ -38,6 +38,25 @@ public class AnnouncementInMemoryService implements AnnouncementService{
     }
 
     @Override
+    public Announcement deleteAnnouncementById(Long id) {
+
+        Announcement announcement = null;
+       for( Announcement a : allAnnouncement){
+           if(a.getId() == id ){
+               announcement = a;
+               break;
+           }
+       }
+       if(announcement != null){
+           allAnnouncement.remove(announcement);
+           return announcement;
+       }else {
+           return null;
+        }
+
+    }
+
+    @Override
     public List<Announcement> getAnnouncementsByGameNameAsc() {
         return allAnnouncement.stream()
                 .sorted( Comparator.comparing(Announcement::getGameName))
@@ -86,4 +105,6 @@ public class AnnouncementInMemoryService implements AnnouncementService{
                 .filter(announcement -> announcement.getGameName().equalsIgnoreCase(name))
                 .collect(Collectors.toList());
     }
+
+
 }

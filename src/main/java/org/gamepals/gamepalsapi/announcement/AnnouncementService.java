@@ -14,4 +14,5 @@ public interface AnnouncementService {
     List<Announcement> getAnnouncementsForRanked();
     List<Announcement> getAnnouncementsForCasual();
     List<Announcement> getAnnouncementsBySearchedGame(String name);
+    Announcement deleteAnnouncementById(Long Id);
 }
