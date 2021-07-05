@@ -1,9 +1,14 @@
 package org.gamepals.gamepalsapi.announcement;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
+@Entity
 public class Announcement {
 
+    @Id
     long id;
     String user;
     String nick;
@@ -90,5 +95,18 @@ public class Announcement {
 
     public void setDate(LocalDateTime date) {
         this.date = date;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Announcement)) return false;
+        Announcement that = (Announcement) o;
+        return id == that.id && isRanked == that.isRanked && user.equals(that.user) && nick.equals(that.nick) && gameName.equals(that.gameName) && discordName.equals(that.discordName) && additionalInfo.equals(that.additionalInfo) && date.equals(that.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, user, nick, gameName, discordName, additionalInfo, isRanked, date);
     }
 }
