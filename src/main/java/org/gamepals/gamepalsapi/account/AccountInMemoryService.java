@@ -35,7 +35,7 @@ public class AccountInMemoryService implements AccountService {
     public LoginRegisterInfo registerUser(AccountPasses passes) throws NoSuchAlgorithmException {
         Account user = users.stream().filter(u -> u.getUsername().equals(passes.getUsername())).findFirst().orElse(null);
         if(user != null){
-            return new LoginRegisterInfo(false, "", "User with username " + passes.getUsername() + " is already registered registered");
+            return new LoginRegisterInfo(false, "", "User with username " + passes.getUsername() + " is already registered ");
         } else{
             users.add(new Account(passes.getUsername(), PasswordEncryptor.encrypt(passes.getPassword()), new ArrayList<>()));
             return new LoginRegisterInfo(true, passes.getUsername(), "Register successful");
