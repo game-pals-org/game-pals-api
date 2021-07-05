@@ -10,7 +10,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class AnnouncementDbService {
+public class AnnouncementDbService implements AnnouncementService{
     private final AnnoucementRepository repository;
 
     @Autowired
@@ -22,7 +22,7 @@ public class AnnouncementDbService {
         return repository.findAll();
     }
 
-    ;
+    
 
     public Announcement addAnnouncement(Announcement announcement) {
         Optional<Announcement> maybeDuplicate = repository.findById(announcement.getId());
