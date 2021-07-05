@@ -25,16 +25,6 @@ public class AccountController {
         this.announcementService = announcementService;
     }
 
-    @GetMapping("/announcements/{username}")
-    public List<Announcement> getAnnouncementsFromUserWithUsername(@PathVariable String username) {
-        List<Long> announcementsId =  accountService.getAnnouncementsFromUserWithUsername(username);
-        List<Announcement> announcements = new ArrayList<>();
-        for (int i = 0; i < announcementsId.size(); i++) {
-            announcements.add(announcementService.getAnnouncementById(announcementsId.get(i)));
-        }
-        return announcements;
-    }
-
     @PostMapping("/login")
     public LoginRegisterInfo loginUser(@RequestBody AccountPasses passes) throws NoSuchAlgorithmException {
         return accountService.loginUser(passes);
