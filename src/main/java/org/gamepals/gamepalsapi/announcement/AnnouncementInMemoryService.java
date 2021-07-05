@@ -83,7 +83,18 @@ public class AnnouncementInMemoryService implements AnnouncementService{
     @Override
     public List<Announcement> getAnnouncementsBySearchedGame(String name) {
         return allAnnouncement.stream()
-                .filter(announcement -> announcement.getGameName().equalsIgnoreCase(name))
+                .filter(announcement -> announcement.getGameName().toUpperCase().startsWith(name.toUpperCase()))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Announcement> getAnnouncementsFromUserWithUsername(String username) {
+        List<Announcement> announcements = new ArrayList<>();
+        for (int i = 0; i < allAnnouncement.size(); i++) {
+            if (allAnnouncement.get(i).user.equals(username)) {
+                announcements.add(allAnnouncement.get(i));
+            }
+        }
+        return announcements;
     }
 }
