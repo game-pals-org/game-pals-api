@@ -102,9 +102,7 @@ public class AnnouncementInMemoryService implements AnnouncementService{
     @Override
     public List<Announcement> getAnnouncementsBySearchedGame(String name) {
         return allAnnouncement.stream()
-                .filter(announcement -> announcement.getGameName().equalsIgnoreCase(name))
+                .filter(announcement -> announcement.getGameName().toUpperCase().startsWith(name.toUpperCase()))
                 .collect(Collectors.toList());
     }
-
-
 }

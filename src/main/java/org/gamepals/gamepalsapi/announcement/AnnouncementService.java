@@ -1,5 +1,7 @@
 package org.gamepals.gamepalsapi.announcement;
 
+import org.springframework.web.bind.annotation.PathVariable;
+
 import java.util.List;
 
 public interface AnnouncementService {
@@ -15,4 +17,6 @@ public interface AnnouncementService {
     List<Announcement> getAnnouncementsForCasual();
     List<Announcement> getAnnouncementsBySearchedGame(String name);
     Announcement deleteAnnouncementById(Long Id);
+    List<Announcement> getAnnouncementsFromUserWithUsername(String username);
+
 }

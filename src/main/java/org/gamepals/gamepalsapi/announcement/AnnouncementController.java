@@ -57,6 +57,10 @@ public class AnnouncementController {
     public List<Announcement> getAnnouncementsBySearchedGame(@PathVariable String name){
         return announcementService.getAnnouncementsBySearchedGame(name);
     }
+    @GetMapping("/byuser/{username}")
+    public List<Announcement> getAnnouncementsFromUserWithUsername(@PathVariable String username){
+        return announcementService.getAnnouncementsFromUserWithUsername(username);
+    }
 
 
 

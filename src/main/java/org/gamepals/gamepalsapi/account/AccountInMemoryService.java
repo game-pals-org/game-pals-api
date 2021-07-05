@@ -19,12 +19,6 @@ public class AccountInMemoryService implements AccountService {
     ));
 
     @Override
-    public List<Long> getAnnouncementsFromUserWithUsername(String username) {
-        Account user = users.stream().filter(u -> u.getUsername().equals(username)).findFirst().get();
-        return user.getAnnouncements();
-    }
-
-    @Override
     public LoginRegisterInfo loginUser(AccountPasses passes) throws NoSuchAlgorithmException {
         Account user = users.stream().filter(u -> u.getUsername().equals(passes.getUsername())).findFirst().orElse(null);
         if(user == null){
