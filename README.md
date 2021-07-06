@@ -80,7 +80,7 @@ If you want to try operating on an active account, please use one prepared by us
 
 username - ShadowWarrior
 
-password shadow123
+password - shadow123
 
 ## Authors and acknowledgement
 
