@@ -88,6 +88,6 @@ Authors:
 - Kamil Wiśniewski - [github](https://github.com/wisniewski-kamil) - linkedin
 - Mateusz Piwowarski - [github](https://github.com/MateuszPivek) - [linkedin](https://www.linkedin.com/in/mateusz-piwowarski-92488b1b0/)
 - Jan Solski - [github](https://github.com/MonsterIsLegend) - [linkedin](https://www.linkedin.com/in/janeksolski/)
-- Artur - [github](https://github.com/ibnsayd) - linkedin
+- Artur Bartoszewski - [github](https://github.com/ibnsayd) - linkedin
 
 Special thanks to our teacher Tomasz Owczarek - [github](https://github.com/towczare) - for advices and help with some errors
