@@ -1,6 +1,8 @@
 package org.gamepals.gamepalsapi.announcement;
 
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -11,7 +13,15 @@ import java.util.stream.Collectors;
 public class AnnouncementInMemoryService implements AnnouncementService{
 
     private static Long index = 6L;
-    
+
+    public static Long getIndex() {
+        return index;
+    }
+
+    public static void setIndex(Long index) {
+        AnnouncementInMemoryService.index = index;
+    }
+
     private static List<Announcement> allAnnouncement = new ArrayList<>(
             Arrays.asList(new Announcement(1L,"ShadowWarrior","nick1","LOL","discord1","...", true, LocalDateTime.now()),
                     new Announcement(2L,"ShadowWarrior","nick2","WOT","discord2","info", false, LocalDateTime.now()),
@@ -19,7 +29,9 @@ public class AnnouncementInMemoryService implements AnnouncementService{
                     new Announcement(4L,"ShadowWarrior","nick4","CSGO","discord4","info", false, LocalDateTime.now()),
                     new Announcement(5L,"pawcio_x2010","nick5","DOTA","discord5","info", false, LocalDateTime.now()))
     );
-    
+
+
+
     @Override
     public List<Announcement> getAnnouncements() {
         return allAnnouncement;
@@ -32,10 +44,7 @@ public class AnnouncementInMemoryService implements AnnouncementService{
         return announcement;
     }
 
-    @Override
-    public Announcement getAnnouncementById(Long id) {
-        return allAnnouncement.stream().filter(a -> a.getId() == id).findFirst().get();
-    }
+
 
     @Override
     public Announcement deleteAnnouncementById(Long id) {
@@ -85,7 +94,7 @@ public class AnnouncementInMemoryService implements AnnouncementService{
     @Override
     public List<Announcement> getAnnouncementsByDateAsc() {
         return allAnnouncement.stream()
-                .sorted(Comparator.comparing(Announcement::getDate))
+                .sorted(Comparator.comparing(Announcement::getGameName).reversed())
                 .collect(Collectors.toList());
     }
 
@@ -115,5 +124,11 @@ public class AnnouncementInMemoryService implements AnnouncementService{
         return allAnnouncement.stream()
                 .filter(announcement -> announcement.getGameName().toUpperCase().startsWith(name.toUpperCase()))
                 .collect(Collectors.toList());
+    }
+
+
+
+    public static void setAllAnnouncement(List<Announcement> allAnnouncement) {
+        AnnouncementInMemoryService.allAnnouncement = allAnnouncement;
     }
 }

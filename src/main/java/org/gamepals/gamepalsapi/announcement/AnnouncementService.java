@@ -8,7 +8,7 @@ public interface AnnouncementService {
 
     List<Announcement> getAnnouncements();
     Announcement addAnnouncement(Announcement announcement);
-    Announcement getAnnouncementById(Long id);
+    Announcement deleteAnnouncementById(Long id);
     List<Announcement> getAnnouncementsByGameNameAsc();
     List<Announcement> getAnnouncementsByGameNameDesc();
     List<Announcement> getAnnouncementsByDateAsc();
@@ -16,7 +16,6 @@ public interface AnnouncementService {
     List<Announcement> getAnnouncementsForRanked();
     List<Announcement> getAnnouncementsForCasual();
     List<Announcement> getAnnouncementsBySearchedGame(String name);
-    Announcement deleteAnnouncementById(Long Id);
     List<Announcement> getAnnouncementsFromUserWithUsername(String username);
 
 }

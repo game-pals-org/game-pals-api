@@ -2,6 +2,7 @@ package org.gamepals.gamepalsapi.announcement;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -12,56 +13,73 @@ import java.util.List;
 @CrossOrigin
 public class AnnouncementController {
 
-    private final AnnouncementService announcementService;
+    private final AnnouncementService service;
 
     @Autowired
-    private AnnouncementController(AnnouncementService announcementService) {
-        this.announcementService = announcementService;
+    private AnnouncementController(@Qualifier("announcementInMemoryService")AnnouncementService service) {
+        this.service = service;
     }
 
     @GetMapping
-    public List<Announcement> getAllAnnouncements(){
-        return announcementService.getAnnouncements();
+    public List<Announcement> getAllAnnouncements() {
+        return service.getAnnouncements();
     }
 
     @PostMapping
-    public Announcement addAnnouncement(@RequestBody Announcement announcement){
-        return announcementService.addAnnouncement(announcement);
+    public Announcement addAnnouncement(@RequestBody Announcement announcement) {
+
+        return service.addAnnouncement(announcement);
+    }
+
+    @DeleteMapping("/{id}")
+    public Announcement deleteAnnouncement(@PathVariable Long id) {
+        return service.deleteAnnouncementById(id);
+
     }
 
     @GetMapping("/gamenameasc")
-    public List<Announcement> getAnnouncementsByGameNameAsc(){
-        return announcementService.getAnnouncementsByGameNameAsc();
-    }
-    @GetMapping("/gamenamedesc")
-    public List<Announcement> getAnnouncementsByGameNameDesc(){
-        return announcementService.getAnnouncementsByGameNameDesc();
-    }
-    @GetMapping("/dateasc")
-    public List<Announcement> getAnnouncementsByDateAsc(){
-        return announcementService.getAnnouncementsByDateAsc();
-    }
-    @GetMapping("/datedesc")
-    public List<Announcement> getAnnouncementsBtDateDesc(){
-        return announcementService.getAnnouncementsBtDateDesc();
-    }
-    @GetMapping("/ranked")
-    public List<Announcement> getAnnouncementsForRanked(){
-        return announcementService.getAnnouncementsForRanked();
-    }
-    @GetMapping("/casual")
-    public List<Announcement> getAnnouncementsForCasual(){
-        return announcementService.getAnnouncementsForCasual();
-    }
-    @GetMapping("/{name}")
-    public List<Announcement> getAnnouncementsBySearchedGame(@PathVariable String name){
-        return announcementService.getAnnouncementsBySearchedGame(name);
-    }
-    @GetMapping("/byuser/{username}")
-    public List<Announcement> getAnnouncementsFromUserWithUsername(@PathVariable String username){
-        return announcementService.getAnnouncementsFromUserWithUsername(username);
+    public List<Announcement> getAnnouncementsByGameNameAsc() {
+        return service.getAnnouncementsByGameNameAsc();
+
     }
 
+    @GetMapping("/gamenamedesc")
+    public List<Announcement> getAnnouncementsByGameNameDesc() {
+        return service.getAnnouncementsByGameNameDesc();
+    }
+
+    @GetMapping("/dateasc")
+    public List<Announcement> getAnnouncementsByDateAsc() {
+        return service.getAnnouncementsByDateAsc();
+    }
+
+    @GetMapping("/datedesc")
+    public List<Announcement> getAnnouncementsBtDateDesc() {
+        return service.getAnnouncementsBtDateDesc();
+
+    }
+
+    @GetMapping("/ranked")
+    public List<Announcement> getAnnouncementsForRanked() {
+        return service.getAnnouncementsForRanked();
+
+    }
+
+    @GetMapping("/casual")
+    public List<Announcement> getAnnouncementsForCasual() {
+        return service.getAnnouncementsForCasual();
+    }
+
+    @GetMapping("/{name}")
+    public List<Announcement> getAnnouncementsBySearchedGame(@PathVariable String name) {
+        return service.getAnnouncementsBySearchedGame(name);
+    }
+
+    @GetMapping("/byuser/{username}")
+    public List<Announcement> getAnnouncementsFromUserWithUsername(@PathVariable String username) {
+        return service.getAnnouncementsFromUserWithUsername(username);
+
+    }
 
 
 }
