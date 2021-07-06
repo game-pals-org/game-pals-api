@@ -37,7 +37,7 @@ public class AccountDbService implements AccountService{
         if(user != null){
             return new LoginRegisterInfo(false, "", "User with username " + passes.getUsername() + " is already registered ");
         } else{
-           repository.save(new Account(passes.getUsername(), PasswordEncryptor.encrypt(passes.getPassword()), new ArrayList<>()));
+           repository.save(new Account(passes.getUsername(), PasswordEncryptor.encrypt(passes.getPassword())));
             return new LoginRegisterInfo(true, passes.getUsername(), "Register successful");
         }
     }

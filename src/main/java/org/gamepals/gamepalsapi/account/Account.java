@@ -13,7 +13,7 @@ public class Account {
     public Account() {
     }
 
-    public Account(String username, String encodedPassword, List<Long> announcements) {
+    public Account(String username, String encodedPassword) {
         this.username = username;
         this.encodedPassword = encodedPassword;
 

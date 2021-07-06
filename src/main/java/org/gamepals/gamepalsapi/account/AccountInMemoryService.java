@@ -14,8 +14,8 @@ import java.util.List;
 public class AccountInMemoryService implements AccountService {
 
     private List<Account> users = new ArrayList<>(Arrays.asList(
-            new Account("ShadowWarrior", "0EB0CB8F59E4EFFDEDAB83E44E320301C413A24573CB1606F83D8F2A1778E58B", new ArrayList<>(Arrays.asList(1L, 2L, 4L))),
-            new Account("pawcio_x2010", "", new ArrayList<>(Arrays.asList(3L, 5L)))
+            new Account("ShadowWarrior", "0EB0CB8F59E4EFFDEDAB83E44E320301C413A24573CB1606F83D8F2A1778E58B"),
+            new Account("guest", "")
     ));
 
     @Override
@@ -37,7 +37,7 @@ public class AccountInMemoryService implements AccountService {
         if(user != null){
             return new LoginRegisterInfo(false, "", "User with username " + passes.getUsername() + " is already registered ");
         } else{
-            users.add(new Account(passes.getUsername(), PasswordEncryptor.encrypt(passes.getPassword()), new ArrayList<>()));
+            users.add(new Account(passes.getUsername(), PasswordEncryptor.encrypt(passes.getPassword())));
             return new LoginRegisterInfo(true, passes.getUsername(), "Register successful");
         }
     }

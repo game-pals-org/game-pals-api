@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @Service
 public class AnnouncementInMemoryService implements AnnouncementService{
 
-    private static Long index = 6L;
+    private static Long index = 11L;
 
     public static Long getIndex() {
         return index;
@@ -23,11 +23,16 @@ public class AnnouncementInMemoryService implements AnnouncementService{
     }
 
     private static List<Announcement> allAnnouncement = new ArrayList<>(
-            Arrays.asList(new Announcement(1L,"ShadowWarrior","nick1","LOL","discord1","...", true, LocalDateTime.now()),
-                    new Announcement(2L,"ShadowWarrior","nick2","WOT","discord2","info", false, LocalDateTime.now()),
-                    new Announcement(3L,"pawcio_x2010","nick3","BFV","discord3","info", true, LocalDateTime.now()),
-                    new Announcement(4L,"ShadowWarrior","nick4","CSGO","discord4","info", false, LocalDateTime.now()),
-                    new Announcement(5L,"pawcio_x2010","nick5","DOTA","discord5","info", false, LocalDateTime.now()))
+            Arrays.asList(new Announcement(1L,"ShadowWarrior","ShadowWarrior","LOL","shadow#1234","...", true, LocalDateTime.now()),
+                    new Announcement(2L,"ShadowWarrior","ShadowWarrior2000","WOW","shadow#1234","info", false, LocalDateTime.now()),
+                    new Announcement(3L,"player1","player1","BFV","player1#0000","info", true, LocalDateTime.now()),
+                    new Announcement(4L,"ShadowWarrior","ShadowWarrior","CS:GO","shadow#1234","info", false, LocalDateTime.now()),
+                    new Announcement(5L,"player2","player2","DOTA 2","player2#1111","info", false, LocalDateTime.now()),
+                    new Announcement(6L,"ShadowWarrior","ShadowWarrior","MINECRAFT","shadow#1234","...", false, LocalDateTime.now()),
+                    new Announcement(7L,"ShadowWarrior","ShadowWarrior2000","WOT","shadow#1234","info", true, LocalDateTime.now()),
+                    new Announcement(8L,"player1","player1","BFV","player1#0000","info", true, LocalDateTime.now()),
+                    new Announcement(9L,"player2","player2","CS:GO","player2#1111","info", false, LocalDateTime.now()),
+                    new Announcement(10L,"ShadowWarrior","ShadowWarrior","DOTA 2","shadow#1234","info", false, LocalDateTime.now()))
     );
 
 
