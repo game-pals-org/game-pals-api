@@ -12,6 +12,7 @@ Game Pals is a simple website used for posting announcements saying that you nee
 - Maven
 - Spring Boot
 - Hibernate
+- H2 Database
 - JUnit 5
 - Angular
 
