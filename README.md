@@ -75,18 +75,20 @@ After succesfull log in you will be redirected to Home page. Sign In and Log In 
 
 After clicking on either one of them you will be redirected to your account page. Here you will see bigger version of your avatar and a list of announcements added from your account with option of deleting them. In your case it will be empty.
 
-[Account view]
+![Account view](https://github.com/game-pals-org/game-pals-api/blob/master/readme_images/img9.png?raw=true)
 
 If you want to try operating on an active account, please use one prepared by us for this purpose:
 
 username - ShadowWarrior
 
 password - shadow123
+  
+![ShadowWarrior user page](https://github.com/game-pals-org/game-pals-api/blob/master/readme_images/img10.png?raw=true)
 
 ## Authors and acknowledgement
 
 Authors:
-- Kamil Wiśniewski - [github](https://github.com/wisniewski-kamil) - linkedin
+- Kamil Wiśniewski - [github](https://github.com/wisniewski-kamil) - [linkedin](https://www.linkedin.com/in/wisniewski-kamil/)
 - Mateusz Piwowarski - [github](https://github.com/MateuszPivek) - [linkedin](https://www.linkedin.com/in/mateusz-piwowarski-92488b1b0/)
 - Jan Solski - [github](https://github.com/MonsterIsLegend) - [linkedin](https://www.linkedin.com/in/janeksolski/)
 - Artur Bartoszewski - [github](https://github.com/ibnsayd) - linkedin
