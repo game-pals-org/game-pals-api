@@ -4,7 +4,7 @@
   <img src="https://github.com/game-pals-org/game-pals-client/blob/main/src/assets/game-pals-logo.png?raw=true" alt="Game Pals logo"/>
 </p
 
-Game Pals is a simple website used for posting announcements saying that you need somebody to play online games with. It was made as a final group project on Java course in [Software Developement Academy](https://sdacademy.dev/). Frontend was made with Angular - deployed online using [Netlify](https://www.netlify.com/), backend was made using Spring - deployed using [Heroku](https://heroku.com). Frontend is comunicating with backend using HTTP requests.
+Game Pals is a simple website used for posting announcements saying that you need somebody to play online games with. It was made as a final group project on Java course in [Software Development Academy](https://sdacademy.dev/). Frontend was made with Angular - deployed online using [Netlify](https://www.netlify.com/), backend was made using Spring - deployed using [Heroku](https://heroku.com). Frontend is comunicating with backend using HTTP requests.
 
 ## Technologies used
 
