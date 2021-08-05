@@ -13,7 +13,6 @@ Game Pals is a simple website used for posting announcements saying that you nee
 - Spring Boot
 - Hibernate
 - H2 Database
-- JUnit 5
 - Angular
 
 **NOTE:** We have implemented fully functional and tested services and repositories based on databases, but in the project version you can experience in the demo we deliberately connected our controllers to services based on Java collections for demontration purposes.
